@@ -60,4 +60,21 @@ public class Students {
         System.out.println("Surname Array: ");
         System.out.println(surnames.toString());
     }
+    public void addNewColumn() throws SQLException {
+        Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        Statement statement = connection.createStatement();
+
+        String alterQuery = ""
+                + "ALTER TABLE newdb.students "
+                + "ADD country varchar(30);";
+        statement.executeUpdate(alterQuery);
+
+        statement.executeUpdate("UPDATE students SET country = 'Italy' WHERE student_id = 1;" );
+        statement.executeUpdate("UPDATE students SET country = 'Italy' WHERE student_id = 2;" );
+        statement.executeUpdate("UPDATE students SET country = 'Germany' WHERE student_id = 3;" );
+        statement.executeUpdate("UPDATE students SET country = 'Germany' WHERE student_id = 4;" );
+
+        statement.close();
+        System.out.println("Country added!");
+    }
 }

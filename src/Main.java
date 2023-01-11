@@ -6,15 +6,14 @@ public class Main {
         Students student = new Students();
 
         try {
-            student.createTable();
+//             student.createTable();
+//             student.insertTable("Bianchi","Valentina");
+//             student.insertTable("Verdi","Paolo");
+//             student.insertTable("Rossi","Luca");
+//             student.insertTable("Marroni","Maria");
+//             student.printAllStudents();
 
-            student.insertTable("Bianchi","Valentina");
-            student.insertTable("Verdi","Paolo");
-            student.insertTable("Rossi","Luca");
-            student.insertTable("Marroni","Maria");
-
-            student.printAllStudents();
-
+            student.addNewColumn();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
